@@ -1,7 +1,8 @@
 # vue-music
 
 ## Project setup
-```
+
+```shell
 yarn install
 ```
 
