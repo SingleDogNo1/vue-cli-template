@@ -1,16 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    {{ msg }}
   </div>
 </template>
 
 <script lang="ts">
 export default {
   name: 'HomeView',
-}
+};
 </script>
 
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue'
+import { ref } from 'vue';
+
+const msg = ref('hello, home');
 </script>
+
+<style lang="scss" scoped>
+.home {
+  color: red;
+}
+</style>

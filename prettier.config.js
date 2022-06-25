@@ -2,7 +2,7 @@ module.exports = {
   printWidth: 100,
   tabWidth: 2,
   useTabs: false,
-  semi: false,
+  semi: true,
   singleQuote: true,
   quoteProps: 'as-needed',
   bracketSpacing: true,
@@ -16,4 +16,4 @@ module.exports = {
   htmlWhitespaceSensitivity: 'strict',
   endOfLine: 'lf',
   rangeStart: 0,
-}
+};

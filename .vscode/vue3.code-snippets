@@ -1,0 +1,32 @@
+{
+  "vue3 + ts": {
+    "prefix": "vue3",
+    "body": [
+      "<template>",
+      "  <div class=\"$1\">",
+      "    {{ msg }}",
+      "  </div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "export default {",
+      "  name: '${TM_FILENAME/(.*)\\.[a-z]+/${1:/capitalize}/i}',",
+      "};",
+      "</script>",
+      "",
+      "<script lang=\"ts\" setup>",
+      "import { ref } from 'vue';",
+      "",
+      "const msg = ref('hello, $1');",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      ".$1 {",
+      "  color: red;",
+      "}",
+      "</style>",
+      ""
+    ],
+    "description": "vue3 & ts & setup"
+  }
+}
