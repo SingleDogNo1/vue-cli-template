@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 module.exports = {
   types: [
     {
@@ -42,4 +42,4 @@ module.exports = {
   scopes: [],
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
-}
+};

@@ -4,11 +4,14 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
 import { router, setupRouter } from './router';
+import { setupStore } from './store';
 
 async function bootstrap() {
   const app = createApp(App);
 
-  await setupRouter(app);
+  setupRouter(app);
+
+  setupStore(app);
 
   await router.isReady();
   app.mount('#app');
