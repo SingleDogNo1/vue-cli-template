@@ -1,18 +1,18 @@
-import { defineStore } from 'pinia';
+import { defineStore, storeToRefs } from 'pinia';
 import { store } from '../index';
 
 interface State {
   count: number;
 }
 
-export const useHelloWorldStore = defineStore({
-  id: 'hello-world',
+export const helloWorldStore = defineStore({
+  id: 'helloWorld',
   state: (): State => ({
     count: 0,
   }),
   getters: {
     getCount(): number {
-      return this.count;
+      return this.count * 2;
     },
   },
   actions: {
@@ -22,7 +22,9 @@ export const useHelloWorldStore = defineStore({
   },
 });
 
-// Need to be used outside the setup
-export function useHelloWorldStoreOut() {
-  return useHelloWorldStore(store);
+export function useHelloWorldStore() {
+  return {
+    store: helloWorldStore(store),
+    state: storeToRefs(helloWorldStore(store)),
+  };
 }

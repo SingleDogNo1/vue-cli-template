@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     {{ msg }}
-    <button @click="store.increment">{{ count }}</button>
+    <button @click="increment">{{ count }}</button>
+    <span>{{ getCount }}</span>
   </div>
 </template>
 
@@ -13,11 +14,11 @@ export default {
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useHelloWorldStore } from '../store/modules/helloWorld';
-import { storeToRefs } from 'pinia';
+import { useHelloWorldStore } from '@store/modules/helloWorld';
 
-const store = useHelloWorldStore();
-const { count } = storeToRefs(store);
+const { store, state } = useHelloWorldStore();
+const { increment } = store;
+const { count, getCount } = state;
 
 const msg = ref('hello, home');
 </script>
